@@ -10,10 +10,11 @@ height = 26.0
 
 [node name="Player" type="CharacterBody2D" unique_id=2017312616]
 script = ExtResource("1_7dd06")
+speed = 5.0
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=2147078247]
 offset = Vector2(0, -15)
-zoom = Vector2(3.5, 3.5)
+zoom = Vector2(5, 5)
 
 [node name="AgentAnimator" type="Node2D" parent="." unique_id=323179274 node_paths=PackedStringArray("player_controller", "animation_player", "sprite")]
 script = ExtResource("2_38rej")
