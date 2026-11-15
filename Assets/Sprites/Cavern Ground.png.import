@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bl6ttl24nshxf"
-path="res://.godot/imported/Cavern Ground 2.png-d10a8a15536070cde9d2616d23550ea0.ctex"
+uid="uid://dp0qksky2p8h1"
+path="res://.godot/imported/Cavern Ground.png-30baa32dddaca077f2690e107d3bd4bb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Cavern Ground 2.png"
-dest_files=["res://.godot/imported/Cavern Ground 2.png-d10a8a15536070cde9d2616d23550ea0.ctex"]
+source_file="res://Assets/Sprites/Cavern Ground.png"
+dest_files=["res://.godot/imported/Cavern Ground.png-30baa32dddaca077f2690e107d3bd4bb.ctex"]
 
 [params]
 
