@@ -8,9 +8,11 @@
 radius = 5.0
 height = 26.0
 
-[node name="Player" type="CharacterBody2D" unique_id=2017312616]
+[node name="Player" type="CharacterBody2D" unique_id=2017312616 node_paths=PackedStringArray("camera") groups=["player"]]
+collision_mask = 768
 script = ExtResource("1_7dd06")
 speed = 5.0
+camera = NodePath("Camera2D")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=2147078247]
 offset = Vector2(0, -15)

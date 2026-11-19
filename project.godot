@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Metroidvania"
-run/main_scene="uid://dfmtwvdm7gj1i"
+run/main_scene="uid://b6r37l3jprirt"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -23,6 +23,11 @@ GameManager="*uid://d33gnnjqkl3nl"
 
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
+
+[global_group]
+
+room_container=""
+player=""
 
 [input]
 
