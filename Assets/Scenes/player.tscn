@@ -14,8 +14,7 @@ script = ExtResource("1_7dd06")
 speed = 5.0
 camera = NodePath("Camera2D")
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=2147078247]
-offset = Vector2(0, -15)
+[node name="Camera2D" type="Camera2D" parent="." unique_id=2147078247 groups=["camera"]]
 zoom = Vector2(5, 5)
 
 [node name="AgentAnimator" type="Node2D" parent="." unique_id=323179274 node_paths=PackedStringArray("player_controller", "animation_player", "sprite")]

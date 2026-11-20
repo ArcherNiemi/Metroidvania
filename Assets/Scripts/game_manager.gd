@@ -6,12 +6,15 @@ var room_path = "res://Assets/Scenes/Rooms/"
 
 var room_container : Node2D
 var player : CharacterBody2D
+var camera : Camera2D
 
 const TRANSITION_POSITION = Vector2(1000000, 1000000)
+const TILE_SIZE = 10
 
 func _ready() -> void:
 	room_container = get_tree().get_first_node_in_group("room_container")
 	player = get_tree().get_first_node_in_group("player")
+	camera = get_tree().get_first_node_in_group("camera")
 	load_room(starting_room,0)
 
 func next_room(room_num, entrance_num):
@@ -40,6 +43,30 @@ func load_room(room_num, entrance_num):
 
 	if position != null:
 		player.teleport_to_location(position)
+	redefine_camera_limits()
+		
+func redefine_camera_limits():
+	var used_cells: Array[Vector2i] = get_tree().get_first_node_in_group("tiles").get_used_cells(0)
+	print(used_cells)
+	
+	var vertical_max = used_cells[0][1]
+	var vertical_min = used_cells[0][1]
+	var horizontal_max = used_cells[0][0]
+	var horizontal_min = used_cells[0][0]
+	for cell in used_cells:
+		if cell[1] > vertical_max:
+			vertical_max = cell[1]
+		if cell[1] < vertical_min:
+			vertical_min = cell[1]
+		if cell[0] > horizontal_max:
+			horizontal_max = cell[0]
+		if cell[0] < horizontal_min:
+			horizontal_min = cell[0]
+	
+	camera.limit_bottom = vertical_max * TILE_SIZE
+	camera.limit_top = vertical_min * TILE_SIZE
+	camera.limit_left = (horizontal_min+1) * TILE_SIZE
+	camera.limit_right = horizontal_max* TILE_SIZE
 	
 func get_entrance_position(entrance_num):
 	var entrances = room_container.get_child(0).get_node("RoomEntrances")
