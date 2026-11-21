@@ -43,11 +43,11 @@ func load_room(room_num, entrance_num):
 
 	if position != null:
 		player.teleport_to_location(position)
+	
 	redefine_camera_limits()
 		
 func redefine_camera_limits():
 	var used_cells: Array[Vector2i] = get_tree().get_first_node_in_group("tiles").get_used_cells(0)
-	print(used_cells)
 	
 	var vertical_max = used_cells[0][1]
 	var vertical_min = used_cells[0][1]
