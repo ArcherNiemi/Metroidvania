@@ -3,13 +3,18 @@
 [ext_resource type="Texture2D" uid="uid://bsh3xunr3vjyu" path="res://Assets/Sprites/Siwon.png" id="1_6cd4h"]
 [ext_resource type="Script" uid="uid://dr75khrmrpq4r" path="res://Assets/Scripts/player_controller.gd" id="1_7dd06"]
 [ext_resource type="Script" uid="uid://bo6oebwp7sd2f" path="res://Assets/Scripts/player_animator.gd" id="2_38rej"]
+[ext_resource type="Script" uid="uid://cf0tkw1785sh8" path="res://Assets/Scripts/hurt_box.gd" id="4_t1xgp"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6m4ps"]
 radius = 5.0
 height = 26.0
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bo4u5"]
+radius = 5.0
+height = 26.0
+
 [node name="Player" type="CharacterBody2D" unique_id=2017312616 node_paths=PackedStringArray("camera") groups=["player"]]
-collision_mask = 4864
+collision_mask = 768
 script = ExtResource("1_7dd06")
 speed = 5.0
 camera = NodePath("Camera2D")
@@ -34,3 +39,13 @@ texture = ExtResource("1_6cd4h")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=747603242]
 position = Vector2(0, -13)
 shape = SubResource("CapsuleShape2D_6m4ps")
+
+[node name="HurtBox" type="Area2D" parent="." unique_id=350041062]
+collision_mask = 4096
+script = ExtResource("4_t1xgp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox" unique_id=282945450]
+position = Vector2(0, -13)
+shape = SubResource("CapsuleShape2D_bo4u5")
+
+[connection signal="body_entered" from="HurtBox" to="HurtBox" method="_on_body_entered"]

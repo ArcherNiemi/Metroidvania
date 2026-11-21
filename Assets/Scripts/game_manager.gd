@@ -7,6 +7,7 @@ var room_path = "res://Assets/Scenes/Rooms/"
 var room_container : Node2D
 var player : CharacterBody2D
 var camera : Camera2D
+var room_spawn_point : Vector2
 
 const TRANSITION_POSITION = Vector2(1000000, 1000000)
 const TILE_SIZE = 10
@@ -43,11 +44,12 @@ func load_room(room_num, entrance_num):
 
 	if position != null:
 		player.teleport_to_location(position)
+		room_spawn_point = position
 	
 	redefine_camera_limits()
 		
 func redefine_camera_limits():
-	var used_cells: Array[Vector2i] = get_tree().get_first_node_in_group("tiles").get_used_cells(0)
+	var used_cells: Array[Vector2i] = get_tree().get_first_node_in_group("tiles").get_used_cells()
 	
 	var vertical_max = used_cells[0][1]
 	var vertical_min = used_cells[0][1]
@@ -64,7 +66,7 @@ func redefine_camera_limits():
 			horizontal_min = cell[0]
 	
 	camera.limit_bottom = vertical_max * TILE_SIZE
-	camera.limit_top = vertical_min * TILE_SIZE
+	camera.limit_top = (vertical_min+1) * TILE_SIZE
 	camera.limit_left = (horizontal_min+1) * TILE_SIZE
 	camera.limit_right = horizontal_max* TILE_SIZE
 	
@@ -80,3 +82,6 @@ func get_entrance_position(entrance_num):
 
 func collect_heart(state):
 	pass
+	
+func take_damage():
+	player.teleport_to_location(room_spawn_point)
