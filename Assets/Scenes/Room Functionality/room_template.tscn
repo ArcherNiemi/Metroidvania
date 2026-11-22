@@ -827,3 +827,5 @@ position = Vector2(20, 0)
 [node name="RoomEntrances" type="Node2D" parent="." unique_id=1372431219]
 
 [node name="0" type="Node2D" parent="RoomEntrances" unique_id=469439708]
+
+[node name="Checkpoints" type="Node2D" parent="." unique_id=540401815]

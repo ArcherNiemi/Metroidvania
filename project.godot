@@ -30,6 +30,7 @@ room_container=""
 player=""
 tiles=""
 camera=""
+hearts=""
 
 [input]
 

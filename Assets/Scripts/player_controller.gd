@@ -35,6 +35,7 @@ func _physics_process(delta: float) -> void:
 	
 func teleport_to_location(new_location):
 	camera.position_smoothing_enabled = false
-	position = new_location
+	global_position = new_location
+	velocity = Vector2(0,0)
 	await get_tree().physics_frame
 	camera.position_smoothing_enabled = true

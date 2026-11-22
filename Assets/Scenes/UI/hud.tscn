@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://2vebkvi3eqbd"]
+
+[ext_resource type="Texture2D" uid="uid://bdsyd8snib741" path="res://Assets/Sprites/Full Heart.png" id="1_7hthr"]
+
+[node name="HUD" type="Control" unique_id=1459864704]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Hearts" type="Control" parent="." unique_id=747949941 groups=["hearts"]]
+anchors_preset = 0
+
+[node name="Heart1" type="TextureRect" parent="Hearts" unique_id=2119667613]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 80.0
+offset_bottom = 80.0
+texture = ExtResource("1_7hthr")
+stretch_mode = 4
+
+[node name="Heart2" type="TextureRect" parent="Hearts" unique_id=988699292]
+layout_mode = 0
+offset_left = 90.0
+offset_top = 10.0
+offset_right = 160.0
+offset_bottom = 80.0
+texture = ExtResource("1_7hthr")
+stretch_mode = 4
+
+[node name="Heart3" type="TextureRect" parent="Hearts" unique_id=263563873]
+layout_mode = 0
+offset_left = 170.0
+offset_top = 10.0
+offset_right = 240.0
+offset_bottom = 80.0
+texture = ExtResource("1_7hthr")
+stretch_mode = 4
+
+[node name="Heart4" type="TextureRect" parent="Hearts" unique_id=1363586653]
+layout_mode = 0
+offset_left = 250.0
+offset_top = 10.0
+offset_right = 320.0
+offset_bottom = 80.0
+texture = ExtResource("1_7hthr")
+stretch_mode = 4

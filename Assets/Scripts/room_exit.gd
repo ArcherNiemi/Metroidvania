@@ -6,4 +6,4 @@ class_name RoomExit
 
 func _on_body_entered(body: Node2D) -> void:
 	if body is PlayerController:
-		GameManager.next_room(next_room_num,entrance_num)
+		GameManager.load_room_by_entrance(next_room_num,entrance_num)
